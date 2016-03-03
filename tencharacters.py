@@ -10,10 +10,20 @@ else:
 	f = open(file, 'w')
 	f.close()
 	f = open(file, 'r+')
+secondFile = raw_input("What file would you like to print to?")
+if os.path.isfile(file):
+	h = open(secondFile, 'r+')
+else:
+	h = open(secondFile, 'w')
+	h.close()
+	h = open(secondFile, 'r+')
 	
 lines = f.read().splitlines()
 for line in lines:
 	if len(line) > 10:
-		f.write("no")
+		h.write(line[:10])
 	else:
-		f.write(line)
+		h.write(line)
+	h.write("\n")
+	
+		
