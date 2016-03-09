@@ -11,12 +11,9 @@ else:
 	f.close()
 	f = open(file, 'r+')
 secondFile = raw_input("What file would you like to print to?")
-if os.path.isfile(file):
-	h = open(secondFile, 'r+')
-else:
-	h = open(secondFile, 'w')
-	h.close()
-	h = open(secondFile, 'r+')
+
+h = open(secondFile, 'w')
+
 	
 lines = f.read().splitlines()
 for line in lines:
